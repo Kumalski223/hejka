@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        #question {
+            color: black; /* Możesz zmienić na pink jeśli chcesz */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="valentineBox">
+        <h2 id="question">Zostaniesz moją walentynką Vicu?</h2>
+        <img id="catImage" src="hamster.jpg" alt="Słodki kotek">
+        <div class="buttons" id="buttons">
+            <button onclick="acceptValentine()">Tak</button>
+            <button onclick="acceptValentine()">Tak</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptValentine() {
+            document.getElementById("question").textContent = "Huuuurrrraaaaa! ❤️";
+            document.getElementById("catImage").src = "kotek.gif";
+            document.getElementById("buttons").style.display = "none";
+        }
+    </script>
+</body>
+</html>
