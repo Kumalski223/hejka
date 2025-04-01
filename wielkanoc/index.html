@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wielkanocna Strona</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #d4f4c6;
+            background-image: url('https://www.transparenttextures.com/patterns/fancy-blossoms.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #f6a8b5;
+            font-family: 'Courier New', monospace;
+        }
+
+        .answers {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .button {
+            background-color: #f1c6d9;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #f29eaa;
+        }
+
+        .result {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        .happy {
+            color: #6f9e56;
+        }
+
+        .sad {
+            color: #b0a0a0;
+        }
+
+        img {
+            width: 200px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="question">Zostaniesz moim jajkiem wielkanocnym Vicu?</h1>
+        <div id="egg-container">
+            <img src="jajek1.jpg" alt="Jajko Wielkanocne" />
+        </div>
+        <div class="answers" id="answers">
+            <button class="button" onclick="showResult('yes')">Tak</button>
+            <button class="button" onclick="showResult('no')">Nie</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function showResult(choice) {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('egg-container').style.display = 'none';
+            document.getElementById('answers').style.display = 'none';
+            const resultDiv = document.getElementById('result');
+            
+            if (choice === 'yes') {
+                resultDiv.innerHTML = '<p class="happy">Hurra <33333</p><img src="jajek2.webp" alt="Szczęśliwe jajko">';
+            } else {
+                resultDiv.innerHTML = '<p class="sad">To przykre... wiesz co... spadaj...</p><img src="jajek3.webp" alt="Smutne jajko">';
+                document.body.style.backgroundColor = '#a6c8f1';
+            }
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
